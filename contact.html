@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Portfolio</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="contact">
+        <div class="contact-details">
+            <h2>Contact Details</h2>
+            <h3>I look forward to working on front-end development projects and am skilled in C, C++ and python  programming. 
+                As a full-stack developer, I thrive on tackling exciting and challenging projects that push boundaries. 
+                I am passionate about creating seamless user experiences and innovative solutions. 
+                Let's connect and discuss how we can bring your ideas to life!</h3>
+            <p><strong>Name:</strong> Sindhu Yamparala</p>
+            <p><strong>Email:</strong> sindhu_yamparala@srmap.edu.in</p>
+            <p><strong>Phone:</strong> +1 234 567 890</p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sindhu-yamparala-a17a34258/" target="_blank">My LinkedIn</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/sindhuyamparala" target="_blank">My GitHub</a></p>
+            <p><strong>Instagram:</strong> <a href="https://www.instagram.com/" target="_blank">My Instagram</a></p>
+        </div>
+        <div class="contact-form">
+            <h2>Contact Me</h2>
+            <form id="contactForm" onsubmit="return submitForm()">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function validateName(name) {
+            const nameRegex = /^[A-Za-z\s]+$/;
+            return nameRegex.test(name);
+        }
+
+        function submitForm() {
+            let name = document.getElementById('name').value.trim();
+            let email = document.getElementById('email').value.trim();
+            let message = document.getElementById('message').value.trim();
+
+            if (!validateName(name)) {
+                alert('Please enter a valid name (letters only).');
+                return false;
+            }
+
+            if (!validateEmail(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+
+            if (message === '') {
+                alert('Please enter your message.');
+                return false;
+            }
+
+            console.log('Name:', name);
+            console.log('Email:', email);
+            console.log('Message:', message);
+
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('message').value = '';
+
+            alert('Your message has been sent!');
+            return false; 
+        }
+    </script>
+</body>
+</html>

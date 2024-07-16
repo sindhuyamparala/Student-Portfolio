@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Portfolio</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="resume.html" class="active">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="resume">
+        <div class="resume-header">
+            <h1>Projects</h1>
+        </div>
+        <div class="projects-container">
+            <div class="project-box" onclick="showModal('CV', 'Created a professional CV using HTML and CSS, showcasing my skills, education, and projects')">
+                <h3>CV</h3>
+                <button onclick="openCode('https://github.com/sindhuyamparala/CV.git')">View Code</button>
+                <img src="D:\Student Portfolio\Screenshot (101).png" alt="cv-image" class="project-image">
+                <p>This CV is a clean and modern web-based resume created using HTML and CSS. The design emphasizes 
+                    simplicity and readability, ensuring that the information is presented clearly and effectively.</p>
+            </div>
+            <div class="project-box" onclick="showModal('Registration Form', 'A registration form created using HTML, CSS, and JavaScript with client-side validation for name, age, email, PIN code, and password based on specific constraints.')">
+                <h3>Registration Form</h3>
+                <button onclick="openCode('https://github.com/sindhuyamparala/Registration-form.git')">View Code</button>
+                <img src="D:\Student Portfolio\Screenshot (102).png" alt="registration form Image" class="project-image">
+                <p>This project involves creating a user-friendly registration form using HTML, CSS, and JavaScript.
+                     With built in client_side validation for each field  to ensure that the user inputs meet specific constraints.</p>
+            </div>
+            <div class="project-box" onclick="showModal('Calculator', 'A simple calculator created using HTML, CSS, and JavaScript, featuring input fields and buttons to perform addition, division, subtraction, and multiplication.')">
+                <h3>Calculator</h3>
+                <button onclick="openCode('https://github.com/sindhuyamparala/Calculator.git')">View Code</button>
+                <img src="D:\Student Portfolio\Screenshot cal.png" alt="basic calculator Image" class="project-image">
+                <p>This project showcases a simple calculator implemented using HTML, CSS, and JavaScript, featuring 
+                    user-friendly functions and interactive elements.</p>
+            </div>
+        </div>
+        <div class="download-button">
+            <a href="D:\Student Portfolio\sindhu yamparala.pdf" download="D:\Student Portfolio\sindhu yamparala.pdf" class="btn">Download Resume</a>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
